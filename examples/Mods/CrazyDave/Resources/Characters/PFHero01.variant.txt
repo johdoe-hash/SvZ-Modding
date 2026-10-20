@@ -1,0 +1,40 @@
+/ The hero (Characters/PFHero01) drawn as Crazy Dave. The hero's own skeleton keeps playing the
+/ game's animations out of sight, and Dave's bones copy it (see the mod loader's docs).
+base = Characters/PFHero01
+model = CrazyDave.glb
+
+/ hero bone = Dave bone: Dave's bone copies the hero bone's motion
+[bones]
+	Hero_spine_low_jnt = Hips
+	Hero_spine_mid_jnt = Spine
+	Hero_spine_hi_jnt = Spine1
+	Hero_spine_end_jnt = Spine2
+	Hero_neck_jnt = Neck
+	Hero_head_a_jnt = Head
+	Hero_jaw_jnt = Jaw
+	Hero_lf_upLeg_jnt = LeftUpLeg
+	Hero_lf_knee_jnt = LeftLeg
+	Hero_lf_ankle_jnt = LeftFoot
+	Hero_lf_ball_jnt = LeftToeBase
+	Hero_rt_upLeg_jnt = RightUpLeg
+	Hero_rt_knee_jnt = RightLeg
+	Hero_rt_ankle_jnt = RightFoot
+	Hero_rt_ball_jnt = RightToeBase
+	Hero_lf_clavicle_jnt = LeftShoulder
+	Hero_lf_upArm_jnt = LeftArm
+	Hero_lf_elbow_jnt = LeftForeArm
+	Hero_lf_wrist_jnt = LeftHand
+	Hero_lf_index_a_jnt = LeftHandMiddle1
+	Hero_lf_thumb_a_jnt = LeftHandThumb1
+	Hero_rt_clavicle_jnt = RightShoulder
+	Hero_rt_upArm_jnt = RightArm
+	Hero_rt_elbow_jnt = RightForeArm
+	Hero_rt_wrist_jnt = RightHand
+	Hero_rt_index_a_jnt = RightHandMiddle1
+	Hero_rt_thumb_a_jnt = RightHandThumb1
+
+/ hero bone = Dave bone: the hero bone (with the sword, bow and effects the game puts there) moves onto Dave
+[attach]
+	Hero_rt_wrist_jnt = RightHand
+	Hero_lf_wrist_jnt = LeftHand
+	Hero_head_a_jnt = Head

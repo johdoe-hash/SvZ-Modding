@@ -1,0 +1,4 @@
+name = Crazy Dave
+version = 1.0
+author = SvZ Mod Loader example
+description = Replaces the samurai hero's model with Crazy Dave (Plants vs. Zombies: Garden Warfare 2). He keeps all of the hero's animations, weapons and abilities.

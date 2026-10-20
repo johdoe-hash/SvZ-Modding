@@ -1,0 +1,11 @@
+/ A new enemy. "_inherit" starts it as a copy of an existing enemy; the lines below override that.
+[Giant_Zombie]
+	_inherit = H_Zombie_Warhammer
+	displayName = Giant Zombie
+	prefab = Characters/PFZombieGiant
+	health = 2500
+	speedMin = 55
+	speedMax = 60
+	meleeDamage = 120
+	knockbackResistance = 90
+	award = 150

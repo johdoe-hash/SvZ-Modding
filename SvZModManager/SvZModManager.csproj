@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- SvZ Mod Manager: picks which mods (and which parts of each) the game loads, installs the
+       mod loader, and starts the game. Carries BepInEx and the SvZ mod loader inside the exe. -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>SvZ Mod Manager</AssemblyName>
+    <RootNamespace>SvZModManager</RootNamespace>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\ModLayout.cs" Link="Shared\ModLayout.cs" />
+    <EmbeddedResource Include="..\downloads\BepInEx_win_x64_5.4.23.5.zip" LogicalName="BepInEx.zip" />
+  </ItemGroup>
+
+  <!-- Build the in-game mod loader and embed it, so installing always uses the matching version. -->
+  <Target Name="EmbedModLoader" BeforeTargets="PrepareForBuild">
+    <!-- Restore it first (in its own evaluation), so a fresh clone builds in one step. -->
+    <MSBuild Projects="..\SvZModLoader\SvZModLoader.csproj" Targets="Restore" Properties="Configuration=$(Configuration);MSBuildRestoreSessionId=$([System.Guid]::NewGuid())" RemoveProperties="RuntimeIdentifier;SelfContained;PublishSingleFile;PublishDir;_IsPublishing" />
+    <MSBuild Projects="..\SvZModLoader\SvZModLoader.csproj" Targets="Build" Properties="Configuration=$(Configuration)" RemoveProperties="RuntimeIdentifier;SelfContained;PublishSingleFile;PublishDir;_IsPublishing">
+      <Output TaskParameter="TargetOutputs" ItemName="ModLoaderDll" />
+    </MSBuild>
+    <ItemGroup>
+      <EmbeddedResource Include="@(ModLoaderDll)" LogicalName="SvZModLoader.dll" />
+    </ItemGroup>
+  </Target>
+</Project>

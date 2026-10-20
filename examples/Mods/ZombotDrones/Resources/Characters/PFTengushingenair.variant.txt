@@ -1,0 +1,29 @@
+﻿/ The flying tengu (Characters/PFTengushingenair) as a Zombot drone. The tengu's skeleton still flies
+/ the character around out of sight; the drone follows its body and plays its own animations, which
+/ the game starts by name just like the tengu's.
+base = Characters/PFTengushingenair
+model = Zombot.glb
+modelHeight = 0.6
+follow = Tengu_spine_low_jnt
+
+/ game animation = the drone's animation (made in Blender: Hover, Fly, Shoot, Crash, Spin)
+[animations]
+	idle = Hover
+	walk = Fly
+	attack01 = Shoot
+	rangedattack = Shoot
+	die = Crash
+	dieexplode = Crash
+	victory = Spin
+
+/ Ranged attacks play "rangedattack", which the tengu doesn't have. A copy of its melee attack keeps
+/ the timing of the moment the hit lands.
+[clips]
+	rangedattack = attack01
+
+/ Its shots (bullets, see Registry/Enemies.txt) are drawn as lasers from the drone's mouth.
+[laser]
+	from = Muzzle
+	color = 1, 0.15, 0.1
+	width = 8
+	duration = 0.4

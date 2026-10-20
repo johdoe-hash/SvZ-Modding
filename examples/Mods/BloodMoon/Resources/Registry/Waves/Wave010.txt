@@ -1,0 +1,3 @@
+/ Adds the Giant Zombie at the end of this wave.
+[Commands]
+	Giant_Zombie

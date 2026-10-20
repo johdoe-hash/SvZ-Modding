@@ -1,0 +1,28 @@
+# Only the tools' own source is published. Everything else in this folder stays local: the game copy
+# (game/), decompiled game code, downloads (BepInEx), save backups, and 3D models and images that
+# belong to Glu or EA. So this file ignores everything and lists what to keep.
+/*
+!/.gitignore
+!/README.md
+!/MODDING.md
+!/Shared/
+!/SvZModLoader/
+!/SvZModManager/
+!/tools/
+!/devtools/
+!/examples/
+
+# Blender scripts only - not the models they were used on.
+!/work/
+/work/*
+!/work/*.py
+!/work/crazydave/
+/work/crazydave/*
+!/work/crazydave/convert.py
+
+# Build output.
+bin/
+obj/
+publish/
+.vs/
+*.user

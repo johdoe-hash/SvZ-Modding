@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- TEST ONLY (not part of the mod loader): injects taps for scripted testing. BepInEx plugin for the Unity 2017.4 PC build of Samurai vs Zombies Defense.
+       The game runs Unity's legacy Mono (.NET 3.5 profile), so the plugin compiles against the
+       game's own class libraries instead of a .NET Framework targeting pack. -->
+  <PropertyGroup>
+    <TargetFramework>net35</TargetFramework>
+    <AssemblyName>SvZTestDriver</AssemblyName>
+    <RootNamespace>SvZTestDriver</RootNamespace>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <GameDir>$(MSBuildThisFileDirectory)..\..\game</GameDir>
+    <GameManaged>$(GameDir)\SvZ Defense Cheats_Data\Managed</GameManaged>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NoStdLib>true</NoStdLib>
+    <FrameworkPathOverride>$(GameManaged)</FrameworkPathOverride>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="mscorlib" HintPath="$(GameManaged)\mscorlib.dll" Private="false" />
+    <Reference Include="System" HintPath="$(GameManaged)\System.dll" Private="false" />
+    <Reference Include="System.Core" HintPath="$(GameManaged)\System.Core.dll" Private="false" />
+    <Reference Include="UnityEngine" HintPath="$(GameManaged)\UnityEngine.dll" Private="false" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(GameManaged)\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="UnityEngine.AudioModule" HintPath="$(GameManaged)\UnityEngine.AudioModule.dll" Private="false" />
+    <Reference Include="UnityEngine.AssetBundleModule" HintPath="$(GameManaged)\UnityEngine.AssetBundleModule.dll" Private="false" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(GameManaged)\UnityEngine.ImageConversionModule.dll" Private="false" />
+    <Reference Include="UnityEngine.ScreenCaptureModule" HintPath="$(GameManaged)\UnityEngine.ScreenCaptureModule.dll" Private="false" />
+    <Reference Include="Assembly-CSharp" HintPath="$(GameManaged)\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="BepInEx" HintPath="$(GameDir)\BepInEx\core\BepInEx.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GameDir)\BepInEx\core\0Harmony.dll" Private="false" />
+  </ItemGroup>
+
+  <Target Name="DeployToGame" AfterTargets="Build">
+    <MakeDir Directories="$(GameDir)\BepInEx\plugins\SvZTestDriver" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\SvZTestDriver" />
+  </Target>
+</Project>

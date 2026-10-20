@@ -1,0 +1,3 @@
+/ Merged into the game's Text/Default: only the lines listed here change.
+waveselect_inst_pc = Click to choose your battle
+waveselect_inst = Tap to choose your battle

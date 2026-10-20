@@ -1,0 +1,4 @@
+name = Blood Moon
+version = 1.0
+author = SvZ Mod Loader example
+description = Example of each kind of change: a red title screen (texture), new wave-select text (text), and a new enemy - the Giant Zombie, a bigger, tougher warhammer zombie - added to waves 5, 10 and 52 (model + game data).

@@ -1,0 +1,13 @@
+/ Zombot drones shoot from a distance (bullets hit instantly; the variant draws them as lasers)
+/ instead of diving in to fight up close.
+[Tengu_air]
+	meleeRange = 0
+	bowRange = 420
+	bowDamage = 60
+	projectile = Bullet
+
+[Evil_Tengu_air]
+	meleeRange = 0
+	bowRange = 420
+	bowDamage = 90
+	projectile = Bullet

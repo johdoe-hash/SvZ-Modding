@@ -1,0 +1,4 @@
+name = Sunflower Queen
+version = 1.0
+author = SvZ Mod Loader example
+description = Nobunaga - the ally, his charm-summoned big version and his zombie - is drawn as the Sunflower Queen (Plants vs. Zombies: Garden Warfare 2), moving with Nobunaga's own animations.

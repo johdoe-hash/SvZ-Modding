@@ -1,0 +1,4 @@
+/ A new model made from an existing one: the heavy warhammer zombie, 1.7x bigger, sickly green.
+base = Characters/PFHzombieWarH
+scale = 1.7
+tint = 0.7, 1.0, 0.6

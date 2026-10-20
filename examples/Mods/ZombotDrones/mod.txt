@@ -1,0 +1,4 @@
+name = Zombot Drones
+version = 1.0
+author = SvZ Mod Loader example
+description = The flying tengu are replaced by Zombot drones (Plants vs. Zombies: Garden Warfare) with their own hover, flight, recoil and crash animations. They keep their distance and fire lasers.

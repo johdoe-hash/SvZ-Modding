@@ -1,0 +1,36 @@
+/ Characters/PFNobunagaZombie drawn as the Sunflower Queen, moving with Nobunaga's own animations.
+base = Characters/PFNobunagaZombie
+model = SunflowerQueen.glb
+/ Her stem curves and her roots splay out: keep her own rest pose rather than lining it up with his.
+alignRest = no
+
+/ Nobunaga's bone = the Queen's bone (rigged in Blender: stem = spine, flower = head, twig arms)
+[bones]
+	charName_spine_low_jnt = Hips
+	charName_spine_mid_jnt = Spine
+	charName_spine_hi_jnt = Spine1
+	charName_spine_end_jnt = Spine2
+	charName_neck_jnt = Neck
+	charName_head_a_jnt = Head
+	charName_lf_upLeg_jnt = LeftUpLeg
+	charName_lf_knee_jnt = LeftLeg
+	charName_lf_ankle_jnt = LeftFoot
+	charName_lf_ball_jnt = LeftToeBase
+	charName_rt_upLeg_jnt = RightUpLeg
+	charName_rt_knee_jnt = RightLeg
+	charName_rt_ankle_jnt = RightFoot
+	charName_rt_ball_jnt = RightToeBase
+	charName_lf_clavicle_jnt = LeftShoulder
+	charName_lf_upArm_jnt = LeftArm
+	charName_lf_elbow_jnt = LeftForeArm
+	charName_lf_wrist_jnt = LeftHand
+	charName_rt_clavicle_jnt = RightShoulder
+	charName_rt_upArm_jnt = RightArm
+	charName_rt_elbow_jnt = RightForeArm
+	charName_rt_wrist_jnt = RightHand
+
+/ Nobunaga's sword hand and head (where the game puts weapons and effects) follow her.
+[attach]
+	charName_rt_wrist_jnt = RightHand
+	charName_lf_wrist_jnt = LeftHand
+	charName_head_a_jnt = Head
